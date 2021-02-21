@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 const initState = {
     popular: [],
     newGames: [],
@@ -13,5 +15,15 @@ const gamesReducer = ( state=initState, action ) => {
             return {...state}
     }
 }
+
+//ACTION CREATOR
+const fetchGames = (userData) => {
+    return {
+        type: "FETCH_GAMES",
+        payload: userData
+    }
+}
+
+
 
 export default gamesReducer;
